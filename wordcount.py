@@ -15,14 +15,14 @@ with open('test.txt') as poem:
         list_line = line.split(' ')
         for word in list_line:
             word = word.strip()
-            if word in wordcount_dictionary:
-                wordcount_dictionary[word] += 1 
-            else:
-                wordcount_dictionary[word] = 1
+            # if word in wordcount_dictionary:
+            #     wordcount_dictionary[word] += 1 
+            # else:
+            #     wordcount_dictionary[word] = 1
+            wordcount_dictionary[word] = wordcount_dictionary.get(word, 0) + 1
 
     for key, value in wordcount_dictionary.items():
         print(key, value)
-poem.close()
 
 
 
